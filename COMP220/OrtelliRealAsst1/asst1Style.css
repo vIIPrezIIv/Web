@@ -1,0 +1,79 @@
+body {
+	background-color: red;
+	font-family: "Times New Roman", Georgia, Serif;
+	color: black;
+	font: 1em;
+	font-weight: bold;
+}
+
+.top {
+	height: 2em;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+.bigpiece {
+	margin-left: 3em;
+	margin-right: 3em;
+	height: 20em;
+	width: 69em;
+	background-color: grey;
+	padding-bottom: 2em;
+	padding-left: 2em;
+	padding-right: 2em;
+	padding-top: 2em;
+}
+
+.leftpiece {
+	background-color: red;
+	width: 4em;
+	height: 20em;
+	margin-right: 2em;
+	float: left;
+}
+
+.middlepiece {
+	background-color: blue;
+	height: 20em;
+	width: 50em;
+	display: inline-block;
+	float: left;
+}
+
+.rightpiece {
+	height: 20em;
+	width: 11em;
+	background-color: yellow;
+	margin-left: 1em;
+	float: right;
+}
+
+.bottom {
+	margin-top: 2em;
+	padding-left: 3em;
+}
+
+button {
+	margin-top: 1em;
+	margin-bottom: 1em;
+	width: 100%;
+}
+
+.whiteSpace
+{ 
+	white-space:pre; 
+}
+
+.paraSpace{
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image{
+	margin-top: 1.5em;
+	margin-bottom: 1.5em;
+	margin-left: 2.5em;
+	margin-right: 2.5em;
+}
+

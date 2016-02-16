@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>appointments</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script>
+			//window.onload = appointments(appointmentsArray);
+			var appointmentsArray = [
+				{"petName" : "Henry", "vetName" : "John", "dateAndTime" : "01-14-15"},
+				{"petName" : "Henry", "vetName" : "John", "dateAndTime" : "01-14-15"},
+				{"petName" : "Henry", "vetName" : "John", "dateAndTime" : "01-14-15"},
+				{"petName" : "Henry", "vetName" : "John", "dateAndTime" : "01-14-15"},
+				{"petName" : "Henry", "vetName" : "John", "dateAndTime" : "01-14-15"},
+				{"petName" : "Henry", "vetName" : "John", "dateAndTime" : "01-14-15"},
+				{"petName" : "Henry", "vetName" : "John", "dateAndTime" : "01-14-15"},
+				{"petName" : "Henry", "vetName" : "John", "dateAndTime" : "01-14-15"},
+				{"petName" : "Henry", "vetName" : "John", "dateAndTime" : "01-14-15"},
+				{"petName" : "Henry", "vetName" : "John", "dateAndTime" : "01-14-15"},
+			];
+			
+			function appointments(appointmentsArray) {
+				var appointmentList = ""; //= "<table border = 1>";
+				appointmentList += "<th>Pet Name</th><th>Vet Name</th><th>Date & Time</th>";
+				var ctr = 0;
+				for(ctr; ctr < appointmentsArray.length; ctr++)
+				{
+					appointmentList += "<tr><td>" + appointmentsArray[ctr].petName + "</td><td>" + appointmentsArray[ctr].vetName + "</td><td>" + appointmentsArray[ctr].dateAndTime + "</td></tr>";
+				}
+				//appointmentList += "</table>";
+				document.getElementById("appointmentInsert").innerHTML = appointmentList;
+					
+			}
+			
+			window.addEventListener("load",
+				function() {
+					appointments(appointmentsArray);
+				},false);
+				
+				function updateTable() {
+					var tableValue = document.getElementById("appointmentInsert");
+					var petName = document.getElementById("petName").value;
+					var vetName = document.getElementById("vetName").value;
+					var date = document.getElementById("date").value;
+					var time = document.getElementById("time").value;
+					var addingRow = {"petName" : petName, "vetName" : vetName, "dateAndTime" : date + " " + time};
+					var arrayLength = appointmentsArray.length -1;
+					
+					appointmentsArray.push(addingRow);
+					
+					tableValue.innerHTML += "<tr><td>" + petName + "</td><td>" + vetName + "</td><td>" + date + " " + time + "</td></tr>";
+					return false;
+					
+				}
+
+		</script>
+    </head>
+    <body>
+		<table id = "appointmentInsert" border = 1>
+		</table>
+        <form onSubmit = "return updateTable()" >
+			<p><label>Pet Name</label>
+                <input type = "text" name = "petName" required = "true" title = "Must enter a pet name" id = "petName"/>
+            </p>
+            <p><label>Vet Name</label>
+                <input type = "text" name = "vetName" required = "true" title = "Must enter a vet name" id = "vetName" />
+            </p>
+			<p><label>Date</label>
+                <input type = "date" name = "date" required = "true" title = "Must enter a date" id = "date"/>
+            </p>
+			<p><label>Time</label>
+                <input type = "time" name = "time" required = "true" title = "Must enter a time" id = "time"/>
+            </p>
+			<p>
+                <input type = "submit" value ="Confirm"/>
+            </p>
+        </form>
+    </body>
+</html>

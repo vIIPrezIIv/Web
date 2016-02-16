@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Pets</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script>	
+			var petArray = [
+				{"name" : "Dog", "breed" : "Awesome Breed", "owner" : "Jesus"},
+				{"name" : "Dog", "breed" : "Awesome Breed", "owner" : "Jesus"},
+				{"name" : "Dog", "breed" : "Awesome Breed", "owner" : "Jesus"},
+				{"name" : "Dog", "breed" : "Awesome Breed", "owner" : "Jesus"},
+				{"name" : "Dog", "breed" : "Awesome Breed", "owner" : "Jesus"},
+				{"name" : "Dog", "breed" : "Awesome Breed", "owner" : "Jesus"},
+				{"name" : "Dog", "breed" : "Awesome Breed", "owner" : "Jesus"},
+				{"name" : "Dog", "breed" : "Awesome Breed", "owner" : "Jesus"},
+				{"name" : "Dog", "breed" : "Awesome Breed", "owner" : "Jesus"},
+				{"name" : "Dog", "breed" : "Awesome Breed", "owner" : "Jesus"}
+			];
+			
+			function pets(petArray) {
+				var petList = "<table border = 1>";
+			    petList += "<th>Pet Name</th><th>Breed</th><th>Owner's Name</th>";
+				var ctr = 0;
+				for(ctr; ctr < petArray.length; ctr++)
+				{
+					petList += "<tr><td>" + petArray[ctr].name + "</td><td>" + petArray[ctr].breed + "</td><td>" + petArray[ctr].owner + "</td></tr>";
+				}
+				petList += "</table>";
+				document.getElementById("petInsert").innerHTML = petList;
+					
+			}
+			
+			window.addEventListener("load",
+				function() {
+					pets(petArray);
+				},false);
+		</script>
+    </head>
+    <body>
+		<div id = "petInsert"></div>	
+    </body>
+</html>

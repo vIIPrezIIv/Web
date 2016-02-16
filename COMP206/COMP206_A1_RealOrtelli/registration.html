@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Registration</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script type = 'text/javascript'>
+			function checkPass() {
+				//var error = document.getElementById('error').value;
+				var pass1 = document.getElementById('password1').value;
+				var pass2 = document.getElementById('password2').value;
+				var ok = true;
+				if (pass1 != pass2) {
+					ok = false;
+					//error.innerText = ("Passwords Do Not Match");
+					alert("Passwords do not match");
+				}
+				else
+				{
+					//error.innerText = ("Passwords Match");
+					alert("Passwords match");
+				}
+				return ok;
+			}
+		</script>
+    </head>
+    <body>
+        <form action = "main.html" onsubmit = "return checkPass()" method = "post">
+            <p><label>First Name</label>
+                <input type = "text" name = "firstName" required = "true" title = "Must enter a first name"/>
+            </p>
+            <p><label>Last Name</label>
+                <input type = "text" name = "lastName" required = "true" title = "Must enter a last name" />
+            </p>
+			<p><label>E-Mail Address</label>
+                <input type = "email" name = "eMail" required = "true" title = "Must enter a valid E-Mail" />
+            </p>
+			<p><label>Phone Number</label>
+                <input type = "tel" name = "phoneNumber" required = "true" title = "Must enter a valid phone number" pattern = "[2-9][0-9]{2}-[0-9]{3}-[0-9]{4}"/>
+            </p>
+			<p><label>Password</label>
+                <input type = "password" name = "password1" required = "true" title = "Must enter a valid password with one upper case, one lower case, one digit and must be 5 characters long" id = "password1" pattern = "(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,}"/>
+                <input type = "password" name = "password2" required = "true" title = "Must enter a valid password with one upper case, one lower case, one digit and must be 5 characters long" id = "password2" pattern = "(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,}"/>
+			</p>
+            <p>
+                <input type = "submit" value ="Register"/>
+            </p>
+        </form>
+    </body>
+</html>
